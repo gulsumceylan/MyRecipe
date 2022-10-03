@@ -1,0 +1,22 @@
+<section id="header">
+  <div class="header container2">
+    <img style="width: 60px; height: 60px" src="./assets/icon/cooking.png" type="button" routerLink="/home"/>
+    <div class="nav-bar">
+      <div class="brand">
+        <a routerLink="/home"><h1><span>M</span>y <span>R</span>ecipes</h1></a>
+      </div>
+      <div class="nav-list">
+        <div class="hamburger">
+          <div class="bar"></div>
+        </div>
+        <ul>
+          <li><a routerLink="/home" data-after="Home">Home</a></li>
+          <li><a routerLink="/recipes" data-after="Services">Recipes</a></li>
+          <li><a routerLink="/shopping-list" data-after="Projects">Shopping List</a></li>
+          <li><a data-after="Logout" (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
