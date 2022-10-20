@@ -1,1 +1,89 @@
-<p>recipe-edit works!</p>
+<section id="recipe-edit">
+  <div class="recipe-edit container2">
+    <div class="col-left">
+      <div class="recipe-edit-img">
+        <img [src]="imagePath?.value">
+      </div>
+    </div>
+    <div class="col-right">
+      <h1 class="section-title">Add <span>R</span>ecipe</h1>
+
+      <form [formGroup]="recipeForm">
+        <div class="form-outline mb-4 form-group">
+          <h4>Recipe Name</h4>
+          <input type="text" class="form-control" formControlName="name"/>
+        </div>
+
+        <div class="form-outline mb-4 form-group">
+          <h4>Category</h4>
+          <div class="form-check categoryText" *ngFor="let category of categories" style="display: inline-block;">
+            <input type="radio" class="form-check-input" id="{{category.categoryId}}"
+                   [value]="category.categoryId" formControlName="category"
+                   [checked]="recipeForm.get('category').value === category.categoryId"
+            >{{category.name}}
+          </div>
+        </div>
+
+        <div>
+          <h4>Ingredients</h4>
+          <div class="row mb-4" formArrayName="ingredients">
+            <div class="row" *ngIf="isClikedAddButton">
+              <div class="col">
+                <h5>Name</h5>
+              </div>
+              <div class="col">
+                <h5>Measurement</h5>
+              </div>
+            </div>
+            <div
+              class="row"
+              *ngFor="let ingredientCtrl of controls; let i=index"
+              formGroupName="{{i}}"
+              style="margin-top: 10px; align-items: center; justify-items: center">
+              <div class="col-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="name">
+              </div>
+              <div class="col-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="measurement">
+              </div>
+              <div class="col-2">
+                <button
+                  class="btn btn-danger"
+                  type="button"
+                  (click)="onDeleteIngredient(i)"
+                > X
+                </button>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-outline-danger mybutton" (click)="onAddIngredient()">Add Ingredient
+          </button>
+        </div>
+
+        <div class="form-outline mb-4 form-group">
+          <h4>Directions</h4>
+          <textarea class="form-control" rows="8" formControlName="description"></textarea>
+        </div>
+
+        <div class="form-outline mb-4 form-group">
+          <h4>Image</h4>
+          <input type="text" class="form-control" formControlName="imagePath" #imagePath/>
+        </div>
+
+      </form>
+      <div>
+        <button type="button" class="btn btn-outline-danger mybutton" (click)="onDelete()">Delete</button>
+        <button type="button" class="btn btn-outline-warning mybutton" routerLink="/recipes">Go Back</button>
+        <button type="button" class="btn btn-outline-success mybutton" (click)="onSubmit()">Save</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+

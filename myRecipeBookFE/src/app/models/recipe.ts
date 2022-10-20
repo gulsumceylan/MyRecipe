@@ -1,18 +1,33 @@
-import { Ingredient } from "./ingredient";
+import {Category} from './category';
+import {Ingredient} from './ingredient';
 
+export class Recipe {
+  public recipeId?: number;
+  public name: string;
+  public category: Category;
+  public categoryId?: number;
+  public description: string;
+  public imagePath: string;
+  public ingredients?: Ingredient[];
+  public userId?: number;
 
-export class Recipe{
-  public recipeId?: string;
-  public recipeName:string;
-  public description:string;
-  public imagePath:string;
-  public ingredients:Ingredient[];
-
-  constructor(recipeId:string,recipeName:string,description:string,imagePath:string,ingredients:Ingredient[]) {
-    this.recipeId=recipeId;
-    this.recipeName=recipeName;
-    this.description=description;
-    this.imagePath=imagePath;
-    this.ingredients=ingredients;
+  constructor(
+    recipeId: number,
+    name: string,
+    category: Category,
+    categoryId: number,
+    description: string,
+    imagePath: string,
+    ingredients: Ingredient[],
+    userId: number
+  ) {
+    this.recipeId = recipeId;
+    this.name = name;
+    this.category = category;
+    this.categoryId = categoryId;
+    this.description = description;
+    this.imagePath = imagePath;
+    this.ingredients = ingredients;
+    this.userId = userId;
   }
 }

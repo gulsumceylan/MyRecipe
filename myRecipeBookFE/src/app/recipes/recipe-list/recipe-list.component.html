@@ -1,1 +1,48 @@
-<p>recipe-list works!</p>
+<div class="container marketing">
+  <div class="row">
+    <div class="col-2 text-center">
+      <img class="bd-placeholder-img rounded-circle categoryImg"
+           src='../../../assets/img/allRecipe.jpg'>
+      <h5>All Recipes</h5>
+    </div>
+    <div class="col-2 text-center" *ngFor="let category of categories">
+      <img class="bd-placeholder-img rounded-circle categoryImg"
+           src={{category.imagePath}}>
+      <h5>{{category.name}}</h5>
+    </div>
+  </div>
+</div>
+
+
+<div style="text-align: end; margin: 15px;">
+  <button type="button" class="btn btn-outline-danger" routerLink="edit">
+    <img style="width: 60px; height: 60px" src="./assets/icon/book.png"/>
+    <h3>Create Recipe</h3>
+  </button>
+</div>
+
+<div class="recipe-header">
+  <h1 class="section-title">R<span>ecipes</span></h1>
+</div>
+<div class="all-recipes" *ngFor="let recipe of recipes; let i = index">
+  <div class="recipe-item">
+    <div class="recipe-info">
+      <div type="button" style="width: 40px; height: 40px; align-self: end; text-align: center"
+           [routerLink]="recipe.recipeId+'/edit'">
+        <img src="./assets/icon/pencil.gif"/>
+        <h5>Edit Recipe</h5>
+      </div>
+      <h1> {{recipe.name}}</h1>
+      <h2>Ingredients</h2>
+      <ul *ngFor="let ingredient of recipe.ingredients">
+        <li>{{ingredient.measurement}}  {{ingredient.name}}</li>
+      </ul>
+      <h2>Directions</h2>
+      <p>{{recipe.description}}</p>
+    </div>
+    <div class="recipe-img">
+      <img [src]="recipe.imagePath ? recipe.imagePath : './assets/img/default.jpg'" alt="img">
+    </div>
+  </div>
+</div>
+

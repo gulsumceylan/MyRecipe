@@ -1,4 +1,8 @@
 export class Category {
-  constructor(public id: string, public name: string) {
+  constructor(
+    public categoryId: string,
+    public name: string,
+    public imagePath: string
+  ) {
   }
 }

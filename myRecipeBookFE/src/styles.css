@@ -113,7 +113,7 @@ p {
   background: #b20821;
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(#4c56cc,#e66465);
+  background: linear-gradient(#4c56cc, #e66465);
 }
 
 /* Header section*/
@@ -129,7 +129,7 @@ p {
 #header .header {
   min-height: 8vh;
   background-color: rgba(31, 30, 30, 0.24);
-  transition: .3s ease background-color;
+  transition: 0.3s ease background-color;
 }
 
 #header .nav-bar {
@@ -156,7 +156,7 @@ p {
   align-items: center;
   z-index: 1;
   overflow-x: hidden;
-  transition: .3s ease left;
+  transition: 0.3s ease left;
 }
 
 #header .nav-list ul.active {
@@ -166,7 +166,7 @@ p {
 #header .nav-list ul a {
   font-size: 2.5rem;
   font-weight: 500;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
   text-decoration: none;
   color: white;
   text-transform: uppercase;
@@ -184,7 +184,7 @@ p {
   font-size: 13rem;
   letter-spacing: 50px;
   z-index: -1;
-  transition: .3s ease letter-spacing;
+  transition: 0.3s ease letter-spacing;
 }
 
 #header .nav-list ul li:hover a::after {
@@ -208,13 +208,13 @@ p {
   justify-content: center;
   z-index: 100;
   cursor: pointer;
-  transform: scale(.8);
+  transform: scale(0.8);
   margin-right: 20px;
 }
 
 #header .hamburger::after {
   position: absolute;
-  content: '';
+  content: "";
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -232,12 +232,12 @@ p {
 
 #header .hamburger .bar::after,
 #header .hamburger .bar::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 100%;
   width: 100%;
   background-color: white;
-  transition: .3s ease;
+  transition: 0.3s ease;
   transition-property: top, bottom;
 }
 
@@ -258,7 +258,6 @@ p {
 }
 
 /* End Header section*/
-
 
 /* Home section*/
 #home {
@@ -473,13 +472,13 @@ p {
 }
 
 #recipes .recipe-img:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  background-image: linear-gradient(60deg, #29323c 0%, #596c7e26 100%);
   opacity: 0.7;
 }
 
@@ -489,6 +488,19 @@ p {
 
 #recipes .recipe-item:hover .recipes-img img {
   transform: scale(1.1);
+}
+
+.categoryImg {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.categoryText {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  padding-right: 10px;
 }
 
 /* End Recipes section */
@@ -536,9 +548,7 @@ p {
   border: 7px solid crimson;
 }
 
-
 /* End Recipe Edit section */
-
 
 /* Keyframes */
 @keyframes hamburger_puls {
@@ -655,6 +665,12 @@ p {
     text-align: left;
   }
 
+  .categoryImg {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
   /* End Recipe-edit */
 }
 
@@ -692,11 +708,18 @@ p {
     flex-basis: 22%;
     margin: 1.5%;
   }
+
+  .categoryImg {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
 }
 
 /* End  Media Query For Desktop */
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
