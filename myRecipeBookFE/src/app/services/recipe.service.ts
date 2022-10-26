@@ -21,6 +21,10 @@ export class RecipeService {
     return this.http.get<Recipe>(this.api + 'getById/?id=' + id);
   }
 
+  getRecipesByCategoryId(id: number) {
+    return this.http.get<Recipe[]>(this.api + 'getRecipesByCategoryId/?categoryId=' + id);
+  }
+
   createRecipe(recipe: CreateRecipeRequest) {
     return this.http.post(this.api + 'add', recipe);
   }

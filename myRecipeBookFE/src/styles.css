@@ -496,6 +496,13 @@ p {
   object-fit: cover;
 }
 
+.categoryImgSelected {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 3px outset crimson;
+}
+
 .categoryText {
   display: inline-block;
   font-size: 13px;
@@ -671,6 +678,13 @@ p {
     object-fit: cover;
   }
 
+  .categoryImgSelected {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border: 4px outset crimson;
+  }
+
   /* End Recipe-edit */
 }
 
@@ -713,6 +727,13 @@ p {
     width: 150px;
     height: 150px;
     object-fit: cover;
+  }
+
+  .categoryImgSelected {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px outset crimson;
   }
 }
 
