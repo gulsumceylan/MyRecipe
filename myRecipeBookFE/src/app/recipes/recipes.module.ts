@@ -6,7 +6,7 @@ import {RecipeEditComponent} from './recipe-edit/recipe-edit.component';
 import {RouterModule} from '@angular/router';
 import {RecipesRoutingModule} from './recipes-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { SearchRecipePipe } from './search-recipe.pipe';
+import {SearchRecipePipe} from "./search-recipe.pipe";
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { SearchRecipePipe } from './search-recipe.pipe';
     FormsModule,
     ReactiveFormsModule,
   ],
-  exports:[SearchRecipePipe]
+  exports: [SearchRecipePipe]
 })
 export class RecipesModule {
 }
