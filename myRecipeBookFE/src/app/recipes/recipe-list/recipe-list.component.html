@@ -15,20 +15,25 @@
       </a>
     </div>
   </div>
-</div>
-
-<div style="text-align: end; margin: 15px;">
-  <button type="button" class="btn btn-outline-danger" routerLink="edit">
-    <img style="width: 60px; height: 60px" src="./assets/icon/book.png"/>
-    <h3>Create Recipe</h3>
-  </button>
+  <div class="row">
+    <div class="search-hero col-10">
+      <input class="form-control" type="text" name="search" [(ngModel)]="filterText" autocomplete="off"
+             placeholder="Search recipe">
+    </div>
+    <div class="create-button col-2">
+      <button type="button" class="btn btn-outline-danger" routerLink="edit">
+        <img style="width: 60px; height: 60px" src="./assets/icon/book.png"/>
+        <h3>Create Recipe</h3>
+      </button>
+    </div>
+  </div>
 </div>
 
 <div class="recipe-header">
   <h1 class="section-title">R<span>ecipes</span></h1>
 </div>
 <div class="all-recipes">
-  <div *ngFor="let recipe of recipes; let i = index">
+  <div *ngFor="let recipe of recipes | searchRecipe: filterText ,let i = index">
     <div class="recipe-item">
       <div class="recipe-info">
         <div type="button" style="width: 40px; height: 40px; align-self: end; text-align: center"

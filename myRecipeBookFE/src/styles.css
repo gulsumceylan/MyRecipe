@@ -404,6 +404,20 @@ p {
 /* End Shopping List Section */
 
 /* Recipes section */
+
+.search-hero {
+  padding: 40px;
+}
+
+.create-button {
+  text-align: end;
+  padding: 20px;
+}
+
+.form-control {
+  box-shadow: 0 10px 40px 0 #B0C1D9;
+}
+
 #recipes .recipes {
   flex-direction: column;
   max-width: 1200px;

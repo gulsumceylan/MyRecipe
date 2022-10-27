@@ -17,6 +17,7 @@ export class RecipeListComponent implements OnInit {
   categories: Category[];
   ingredients: Ingredient[];
   notFound: string;
+  filterText: string;
 
   constructor(private recipeService: RecipeService,
               private route: ActivatedRoute,
