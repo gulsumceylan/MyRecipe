@@ -335,73 +335,52 @@ p {
 /* End Home section*/
 
 /* Shopping List Section */
+
 #shopping-list .shopping-list {
-  flex-direction: column;
+  flex-direction: column-reverse;
   text-align: center;
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 100px 20px;
 }
 
-#shopping-list .shopping-list-top {
-  max-width: 500px;
-  margin: 0 auto;
+#shopping-list .col-left {
+  width: 250px;
+  height: 360px;
+  padding-top: 50px;
 }
 
-#shopping-list .shopping-list-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 50px;
-}
-
-#shopping-list .shopping-list-item {
-  flex-basis: 80%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
-  padding: 30px;
-  border-radius: 10px;
-  background-size: cover;
-  margin: 10px 5%;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-
-#shopping-list .shopping-list-item::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
+#shopping-list .col-right {
   width: 100%;
-  background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-  opacity: 0.9;
-  z-index: -1;
 }
 
-#shopping-list .shopping-list-bottom .icon {
-  height: 80px;
-  width: 80px;
-  margin-bottom: 20px;
+#shopping-list .col-right ul{
+  padding-top: 20px;
+  margin-left: 60px;
 }
 
-#shopping-list .shopping-list-item h2 {
-  font-size: 2rem;
-  color: white;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+#shopping-list .col-right li{
+  padding: 7px;
+  border: none;
+  font-size: 16px;
 }
 
-#shopping-list .shopping-list-item p {
-  color: white;
-  text-align: left;
+#shopping-list .col-right li:hover{
+  color: crimson;
+}
+
+#shopping-list .col-right .selected {
+  text-decoration: line-through;
+  color: crimson;
+}
+
+#shopping-list .col-right li span{
+  padding: 10px;
+
 }
 
 /* End Shopping List Section */
+
 
 /* Recipes section */
 
@@ -523,7 +502,6 @@ p {
   font-weight: 400;
   padding-right: 10px;
 }
-
 /* End Recipes section */
 
 /* Recipe Edit section */
@@ -568,8 +546,9 @@ p {
   position: relative;
   border: 7px solid crimson;
 }
-
 /* End Recipe Edit section */
+
+
 
 /* Keyframes */
 @keyframes hamburger_puls {
@@ -626,13 +605,33 @@ p {
   }
 
   /* End Home */
+
   /* Shopping List Section */
-  #shopping-list .shopping-list-bottom .shopping-list-item {
-    flex-basis: 45%;
-    margin: 2.5%;
+  #shopping-list .shopping-list {
+    flex-direction: row;
+  }
+
+  #shopping-list .col-left {
+    width: 450px;
+    height: 335px;
+  }
+
+  #shopping-list .col-right {
+    text-align: left;
+    padding: 100px;
+    height: 700px;
+  }
+
+  #shopping-list .col-right h1 {
+    text-align: left;
+  }
+
+  #shopping-list .col-right ul{
+    margin-left: 10px;
   }
 
   /* End Shopping List Section */
+
   /* Recipes */
   #recipes .recipe-item {
     flex-direction: row;
@@ -732,10 +731,7 @@ p {
   }
 
   /* End header */
-  #shopping-list .shopping-list-bottom .shopping-list-item {
-    flex-basis: 22%;
-    margin: 1.5%;
-  }
+
 
   .categoryImg {
     width: 150px;

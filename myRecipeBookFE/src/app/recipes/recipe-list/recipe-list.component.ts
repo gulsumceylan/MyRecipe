@@ -6,6 +6,7 @@ import {Recipe} from 'src/app/models/recipe';
 import {CategoryService} from 'src/app/services/category.service';
 import {IngredientService} from 'src/app/services/ingredient.service';
 import {RecipeService} from 'src/app/services/recipe.service';
+import {ShoppingListService} from "../../services/shopping-list.service";
 
 @Component({
   selector: 'app-recipe-list',
@@ -18,12 +19,14 @@ export class RecipeListComponent implements OnInit {
   ingredients: Ingredient[];
   notFound: string;
   filterText: string;
+  addToListButton: string = "Add to Shopping List";
 
   constructor(private recipeService: RecipeService,
               private route: ActivatedRoute,
               private router: Router,
               private categoryService: CategoryService,
-              private ingredientService: IngredientService) {
+              private ingredientService: IngredientService,
+              private shoppingListService: ShoppingListService) {
   }
 
   ngOnInit(): void {
@@ -80,5 +83,17 @@ export class RecipeListComponent implements OnInit {
       element.classList.remove("categoryImgSelected");
     })
     document.getElementById('all').classList.add("categoryImgSelected");
+  }
+
+  addToShoppingList(ingredient: Ingredient) {
+    const element = document.getElementById("ing-" + ingredient.ingredientId).classList;
+    element.remove("btn-outline-warning");
+    element.add("btn-success");
+    element.add("disabled");
+    this.shoppingListService.createShoppingList({
+      name: ingredient.name,
+      amount: ingredient.measurement,
+      userId: 1
+    }).subscribe();
   }
 }
