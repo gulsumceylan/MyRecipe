@@ -24,12 +24,12 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if(!this.registerForm.get('email').value || !this.registerForm.get('password').value){
-      this.toastr.error("Lütfen formu eksiksiz doldurunuz.");
+      this.toastr.error("Please fill out the form completely.");
     }else{
       this.auth.register(this.registerForm.value).subscribe(res=>{
      this.router.navigate(['/login']);
     },err=>{
-     this.toastr.error("Hatalı giriş.Bilgilerinizi kontrol edin.");
+     this.toastr.error("Incorrect login. Check your information.");
     })
     }
  }

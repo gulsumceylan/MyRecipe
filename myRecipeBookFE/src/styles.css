@@ -127,7 +127,7 @@ p {
 }
 
 #header .header {
-  min-height: 8vh;
+  min-height: 6vh;
   background-color: rgba(31, 30, 30, 0.24);
   transition: 0.3s ease background-color;
 }
@@ -393,10 +393,6 @@ p {
   padding: 20px;
 }
 
-.form-control {
-  box-shadow: 0 10px 40px 0 #B0C1D9;
-}
-
 #recipes .recipes {
   flex-direction: column;
   max-width: 1200px;
@@ -642,7 +638,7 @@ p {
   }
 
   #recipes .recipe-item {
-    height: 650px;
+    height: 800px;
     margin: 0;
     width: 100%;
     border-radius: 0;

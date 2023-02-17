@@ -91,11 +91,11 @@ export class RecipeEditComponent implements OnInit {
             this.ingredientService.createIngredient(createIngredient).subscribe();
           });
 
-          this.toastr.success('Tarif güncellendi');
+          this.toastr.success('Recipe updated.');
         },
         (err) => {
           this.toastr.error(
-            'Tarif güncellenirken bir hata oluştu tekrar deneyin!'
+            'There was an error updating the recipe, please try again!'
           );
         }
       );
@@ -117,11 +117,11 @@ export class RecipeEditComponent implements OnInit {
             };
             this.ingredientService.createIngredient(createIngredient).subscribe();
           });
-          this.toastr.success('Tarif kaydedildi');
+          this.toastr.success('Recipe added');
         },
         (err) => {
           this.toastr.error(
-            'Tarif kaydedilirken bir hata oluştu tekrar deneyin!'
+            'There was an error updating the recipe, try again!'
           );
         }
       );
@@ -183,10 +183,10 @@ export class RecipeEditComponent implements OnInit {
     });
     this.recipeService.deleteRecipe(this.id).subscribe(
       (res) => {
-        this.toastr.info('Tarif silindi');
+        this.toastr.info('Recipe deleted');
       },
       (err) => {
-        this.toastr.error('Tarif silinemedi,tekrar deneyin!');
+        this.toastr.error('The recipe could not be deleted, try again!');
       }
     );
   }

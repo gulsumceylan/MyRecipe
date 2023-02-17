@@ -24,12 +24,12 @@ export class LoginComponent implements OnInit {
 
   login() {
     if(!this.loginForm.get('email').value || !this.loginForm.get('password').value){
-      this.toastr.error("Lütfen formu eksiksiz doldurunuz.");
+      this.toastr.error("Please fill out the form completely.");
     }else{
      this.auth.login(this.loginForm.value).subscribe(res=>{
       this.router.navigate(['/recipes']);
      },err=>{
-      this.toastr.error("Hatalı giriş.Bilgilerinizi kontrol edin.");
+      this.toastr.error("Incorrect login. Check your information.");
      })
     }
   }

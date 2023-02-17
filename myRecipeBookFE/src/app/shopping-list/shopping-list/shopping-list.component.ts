@@ -47,7 +47,7 @@ export class ShoppingListComponent implements OnInit {
       userId: 1
     }
     this.shoppingListService.createShoppingList(payload).subscribe(res => {
-      this.toastr.success("Listeye eklendi", this.shoppingListForm.get('name').value);
+      this.toastr.success("Added to Shopping List", this.shoppingListForm.get('name').value);
       this.getList();
     })
   }
@@ -59,7 +59,7 @@ export class ShoppingListComponent implements OnInit {
 
   onDeleteItem(item: ShoppingList) {
     this.shoppingListService.deleteShoppingList(item.shoppingId).subscribe(res => {
-      this.toastr.warning("Listeden kaldırıldı", item.name);
+      this.toastr.warning("Deleted to Shopping List", item.name);
       this.getList();
     })
   }
