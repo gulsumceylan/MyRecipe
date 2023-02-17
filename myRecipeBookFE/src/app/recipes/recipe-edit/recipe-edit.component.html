@@ -6,8 +6,8 @@
       </div>
     </div>
     <div class="col-right">
-      <h1 class="section-title">Add <span>R</span>ecipe</h1>
-
+      <h1 *ngIf="!editMode" class="section-title">Add <span>R</span>ecipe</h1>
+      <h1 *ngIf="editMode" class="section-title">Update <span>R</span>ecipe</h1>
       <form [formGroup]="recipeForm">
         <div class="form-outline mb-4 form-group">
           <h4>Recipe Name</h4>

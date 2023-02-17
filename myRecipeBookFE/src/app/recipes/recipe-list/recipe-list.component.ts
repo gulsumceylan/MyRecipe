@@ -60,7 +60,7 @@ export class RecipeListComponent implements OnInit {
         this.notFound = "";
       } else {
         this.recipes = [];
-        this.notFound = `${category.name} kategorisinde tarif bulunamadı`;
+        this.notFound = `${category.name} not found`;
       }
     })
   }
